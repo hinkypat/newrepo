@@ -16,7 +16,7 @@ curl -u <hinkypat> https://api.github.com/user/repos -d '{"name": "'"$repoName"'
 
 GIT_URL=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/<hinkypat>/"$repoName" | jq -r '.clone_url')
 
+git remote add origin https://github.com/hinkypat/newrepo.git
 git branch -M main
-git remote add origin $GIT_URL
 git push -u origin main
 
